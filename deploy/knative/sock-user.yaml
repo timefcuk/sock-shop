@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: user
   namespace: sock-shop
+  labels:
+    serving.knative.dev/visibility: cluster-local
 spec:
   template:
     metadata:
@@ -11,7 +13,7 @@ spec:
         autoscaling.knative.dev/target: "200"
     spec:
       containers:
-      - image: registry.hub.docker.com/weaveworksdemos/user:latest
+      - image: registry.hub.docker.com/weaveworksdemos/user:0.4.7
         ports:
         - containerPort: 80
         env:
@@ -22,5 +24,5 @@ spec:
             cpu: 300m
             memory: 100Mi
           requests:
-            cpu: 100m
+            cpu: 10m
             memory: 100Mi

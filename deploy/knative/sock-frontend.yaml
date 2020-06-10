@@ -18,7 +18,7 @@ spec:
         - name: SESSION_REDIS
           value: "true"
         command: [ "/usr/local/bin/npm" ]
-        args: [ "start", "--", "--domain=sock-shop.10.96.58.0.xip.io" ]
+        args: [ "start", "--", "--domain=sock-shop.svc.cluster.local" ]
         resources:
           limits:
             cpu: 300m

@@ -1,4 +1,3 @@
-
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
@@ -26,6 +25,6 @@ spec:
             cpu: 300m
             memory: 500Mi
           requests:
-            cpu: 300m
+            cpu: 10m
             memory: 500Mi
 
