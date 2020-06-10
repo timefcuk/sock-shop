@@ -1,0 +1,26 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: user
+  namespace: sock-shop
+spec:
+  template:
+    metadata:
+      annotations:
+        # Target 10 in-flight-requests per pod.
+        autoscaling.knative.dev/target: "200"
+    spec:
+      containers:
+      - image: registry.hub.docker.com/weaveworksdemos/user:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: mongo
+          value: "user-db:27017"
+        resources:
+          limits:
+            cpu: 300m
+            memory: 100Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
