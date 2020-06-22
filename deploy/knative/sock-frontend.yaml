@@ -6,7 +6,9 @@ metadata:
 spec:
   template:
     metadata:
-      name: front-end-v2
+      name: front-end-v1
+      labels:
+        version: v1
       annotations:
         # Target 10 in-flight-requests per pod.
         autoscaling.knative.dev/target: "200"
@@ -33,10 +35,10 @@ spec:
         readinessProbe:
           httpGet:
             path: /
-  traffic:
-    - tag: v1
-      revisionName: front-end-v2
-      percent: 30
-    - tag: v2
-      revisionName: front-end-v1
-      percent: 70
+#  traffic:
+#    - tag: v2
+#      revisionName: front-end-v2
+#      percent: 25
+#    - tag: v1
+#      revisionName: front-end-v1
+#      percent: 75

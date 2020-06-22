@@ -10,6 +10,8 @@ spec:
     metadata:
       annotations:
         autoscaling.knative.dev/minScale: "1"
+      labels:
+        version: v1
     spec:
       containers:
       - image: registry.hub.docker.com/weaveworksdemos/shipping:0.4.8

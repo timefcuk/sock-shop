@@ -11,6 +11,8 @@ spec:
       annotations:
         # Target 10 in-flight-requests per pod.
         autoscaling.knative.dev/target: "200"
+      labels:
+        version: v1
     spec:
       containers:
       - image: weaveworksdemos/payment:0.4.3

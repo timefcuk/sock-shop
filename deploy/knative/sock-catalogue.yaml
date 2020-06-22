@@ -11,6 +11,8 @@ spec:
       annotations:
         # Target 10 in-flight-requests per pod.
         autoscaling.knative.dev/target: "200"
+      labels:
+        version: v1
     spec:
       containers:
       - image: registry.hub.docker.com/weaveworksdemos/catalogue:0.3.5
