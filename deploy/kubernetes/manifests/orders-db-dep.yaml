@@ -5,6 +5,8 @@ metadata:
   name: orders-db
   labels:
     name: orders-db
+    app: orders-db
+    version: v1
   namespace: sock-shop
 spec:
   replicas: 1

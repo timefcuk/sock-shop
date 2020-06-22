@@ -5,6 +5,8 @@ metadata:
   name: session-db
   labels:
     name: session-db
+    app: session-db
+    version: v1
   namespace: sock-shop
 spec:
   replicas: 1
